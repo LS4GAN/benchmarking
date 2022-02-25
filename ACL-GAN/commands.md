@@ -1,3 +1,15 @@
-male to female (batch_size=3): CUDA_VISIBLE_DEVICES=0 python test_batch.py --config configs/male2female.yaml --input_folder /data/datasets/cyclegan_benchmarking/datasets/celeba_male2female/testA/ --checkpoint outputs/male2female/checkpoints/gen_00350000.pt --output_folder results/male2female/atob/
+# YAML file naming convention:
+- `[AtoB].yaml` includes `selfie2anime.yaml`, `male2female.yaml`, `rmvGlasses.yaml`
+- `[BtoA].yaml` includes `anime2selfie.yaml`, `female2male.yaml`, `addGlasses.yaml`
 
-female to male (batch_size=3): CUDA_VISIBLE_DEVICES=0 python test_batch.py --config configs/female2male.yaml --input_folder /data/datasets/cyclegan_benchmarking/datasets/celeba_male2female/testB/ --checkpoint outputs/female2male/checkpoints/gen_00350000.pt --output_folder results/female2female
+## Train commands
+- domain A to domain B: 
+  > `python train.py --config configs/[AtoB].yaml`
+- domain B to domain A:
+  > `python train.py --config configs/[BtoA].yaml`
+
+## Test commands:
+- domain A to domain B: 
+  > `python test_batch.py --config configs/[AtoB].yaml --input_folder [path_to_gender_dataset]/testA/ --checkpoint [path_to_pretrained_generator] --output_folder [path_to_output_images]`
+- domain B to domain A: 
+  > `python test_batch.py --config configs/[BtoA].yaml --input_folder [path_to_gender_dataset]/testB/ --checkpoint [path_to_pretrained_generator] --output_folder [path_to_output_images]`
