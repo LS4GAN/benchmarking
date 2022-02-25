@@ -18,8 +18,15 @@ to uniformize the comparison. Here are links to the forked repo:
 The detailed list of modifications to each repo can be found
 in the section of [List of modifications].
 
-- Links to [pre-trained models]:
-- Links to raw and processed [test output]:
+## Pretrained models:
+We used pretrained models whenever they are provided. 
+In case an algorithm did work on a dataset or it did but didn't provide a pretrained model, we generated the pretrained model. 
+Here is the link to the [pre-trained models]
+### ACL-GAN
+ACL-GAN worked on all three datasets, but it only studied translation in one direction (selfie to anime, male to female, removing glasses). It also only provided the configuration file for the male to female task and didn't provide any pretrained model. We generated the configuration files for the other two tasks (selfie to anime, removing glasses) using parameters provided in the paper. For translation in the other direction, we use exactly the same parameters as the opposite direction except for `data_root` (dataset location) and `data_kind` (the name of the task). **NOTE:** since ACL-GAN didn't implemented a switch to switch domain A and B, we have to manually generate datasets that with domain A and B switched. So in case you want to reproduce the results with the configuration files for anime to selfie, female to male, and adding glasses, please first generate the domain-reversed datasets for them.    
+
+## Test outputs
+Links to raw and processed [test output]:
 
 Please find configuration files and/or train/test command in folders for each algorithm.
 
