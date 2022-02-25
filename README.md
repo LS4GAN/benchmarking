@@ -32,7 +32,7 @@ Council-GAN is also an asymmetric model. It works with all the three datasets bu
 
 We construct the configuration files for B to A translation using the same parameters as those for A to B except for parameters `do_a2b` and `do_b2a`. We have to set `do_a2b` to `False` and `do_b2a` to `True` so that we can use the same dataset as that for A to B translation without reversing the two domains as we did for ACL-GAN. 
 
-For some reason, Council-GAN also trained for removing glasses with shrinked images. More precisely, Council-GAN first resizes an image so that the width=128 and then take a 128x128 random crop as input. We used the pretrained model for removing glasses, but had to do postprocessing to enlarge the image. For adding glasses, we decided to load image with width resized to 256 and then take a 256x256 random crop as input (`new_size: 256`, `crop_image_height: 256`, `crop_image_width: 256`).
+For some reason, Council-GAN also trained for removing glasses with shrinked images. More precisely, Council-GAN first resizes an image so that the width=128 and then take a 128x128 random crop as input. We used the pretrained model for removing glasses, but had to do postprocessing to enlarge the image. For adding glasses, we decided to load image with width resized to 256 and then take a 256x256 random crop as input (`new_size: 256`, `crop_image_height: 256`, `crop_image_width: 256`). The configuration files for anime to selfie, female to male, and adding glasses can be found [here](https://github.com/LS4GAN/benchmarking/tree/main/Council-GAN/configs).
 
 ### CycleGAN
 CycleGAN does not use configuration files. Please find the train and test command [here](https://github.com/LS4GAN/benchmarking/blob/main/CycleGAN/commands.md)
@@ -41,8 +41,6 @@ CycleGAN does not use configuration files. Please find the train and test comman
 
 ## Test outputs
 Links to raw and processed [test output]:
-
-Please find configuration files and/or train/test command in folders for each algorithm.
 
 ## List of modifications
 1. ACL-GAN:
