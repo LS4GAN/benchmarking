@@ -18,10 +18,10 @@ to uniformize the comparison. Here are links to the forked repo:
 The detailed list of modifications to each repo can be found
 in the section of [List of modifications].
 
-## Pretrained models:
+## Train and test the benchmarking algorithms:
 We used pretrained models whenever they are provided. 
-In case an algorithm did work on a dataset or it did but didn't provide a pretrained model, we generated the pretrained model. 
-Here is the link to the [pre-trained models]
+In case an algorithm did work on a dataset or it did but didn't provide a pretrained model, we generated it. 
+Here is the link to all [pre-trained models]
 ### ACL-GAN
 ACL-GAN worked on all three datasets, but it only studied translation in one direction (selfie to anime, male to female, removing glasses). It also only provided the configuration file for the male to female task and didn't provide any pretrained model. We generated the configuration files for the other two tasks (selfie to anime, removing glasses) using parameters provided in the paper. Since ACL-GAN is an asymmetric model, we have to train each direction individually. For translation in the opposite directions, we use exactly the same parameter except for `data_root` (dataset location) and `data_kind` (the name of the task). All configuration files can be found [here](https://github.com/LS4GAN/benchmarking/tree/main/ACL-GAN/configs).
 
@@ -35,9 +35,11 @@ We construct the configuration files for B to A translation using the same param
 For some reason, Council-GAN also trained for removing glasses with shrinked images. More precisely, Council-GAN first resizes an image so that the width=128 and then take a 128x128 random crop as input. We used the pretrained model for removing glasses, but had to do postprocessing to enlarge the image. For adding glasses, we decided to load image with width resized to 256 and then take a 256x256 random crop as input (`new_size: 256`, `crop_image_height: 256`, `crop_image_width: 256`). The configuration files for anime to selfie, female to male, and adding glasses can be found [here](https://github.com/LS4GAN/benchmarking/tree/main/Council-GAN/configs).
 
 ### CycleGAN
-CycleGAN does not use configuration files. Please find the train and test command [here](https://github.com/LS4GAN/benchmarking/blob/main/CycleGAN/commands.md)
+CycleGAN does not use configuration files. Please find the train and test command and their more detail about the algorithm [here](https://github.com/LS4GAN/benchmarking/blob/main/CycleGAN/commands.md)
 
 ### U-GAT-IT
+U-GAT-IT hard coded a lot of parameters, and hence the train and test commands are extremely simple. U-GAT-IT provided pretrained model for the selfie2anime dataset but it was in TensorFlow. And the zip file is also corrupted. But, fastjar can extract it using the following command : 
+> `fastjar -v -v -v -x -f ~/Downloads/100_epoch_selfie2anime_checkpoint.zip` 
 
 ## Test outputs
 Links to raw and processed [test output]:
