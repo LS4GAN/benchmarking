@@ -11,9 +11,9 @@ We studied four benchmarking algorithms
 We made several minor modifications to the benchmarking algorithms
 to uniformize the comparison. Here are links to the forked repo:
 1. ACL-GAN:     [Modified GitHub repo](https://github.com/pphuangyi/ACL-GAN)
-2. Council-GAN: [cou modified repo]
-3. CycleGAN:    [cyc modified repo]
-4. U-GAT-IT:    [uga modified repo]
+2. Council-GAN: [Modified GitHub repo]
+3. CycleGAN:    [Modified GitHub repo](https://github.com/pphuangyi/pytorch-CycleGAN-and-pix2pix)
+4. U-GAT-IT:    [Modified GitHub repo](https://github.com/pphuangyi/UGATIT-pytorch)
 
 The detailed list of modifications to each repo can be found
 in the section of [List of modifications].
@@ -23,7 +23,21 @@ We used pretrained models whenever they are provided.
 In case an algorithm did work on a dataset or it did but didn't provide a pretrained model, we generated the pretrained model. 
 Here is the link to the [pre-trained models]
 ### ACL-GAN
-ACL-GAN worked on all three datasets, but it only studied translation in one direction (selfie to anime, male to female, removing glasses). It also only provided the configuration file for the male to female task and didn't provide any pretrained model. We generated the configuration files for the other two tasks (selfie to anime, removing glasses) using parameters provided in the paper. For translation in the other direction, we use exactly the same parameters as the opposite direction except for `data_root` (dataset location) and `data_kind` (the name of the task). **NOTE:** since ACL-GAN didn't implemented a switch to switch domain A and B, we have to manually generate datasets that with domain A and B switched. So in case you want to reproduce the results with the configuration files for anime to selfie, female to male, and adding glasses, please first generate the domain-reversed datasets for them.    
+ACL-GAN worked on all three datasets, but it only studied translation in one direction (selfie to anime, male to female, removing glasses). It also only provided the configuration file for the male to female task and didn't provide any pretrained model. We generated the configuration files for the other two tasks (selfie to anime, removing glasses) using parameters provided in the paper. Since ACL-GAN is an asymmetric model, we have to train each direction individually. For translation in the opposite directions, we use exactly the same parameter except for `data_root` (dataset location) and `data_kind` (the name of the task). All configuration files can be found [here](https://github.com/LS4GAN/benchmarking/tree/main/ACL-GAN/configs).
+
+**NOTE:** since ACL-GAN didn't implemented a switch to switch domain A and B, we have to manually generate datasets that with domain A and B switched. So in case you want to reproduce the results with the configuration files for anime to selfie, female to male, and adding glasses, please first generate the domain-reversed datasets for them.
+
+### Council-GAN
+Council-GAN is also an asymmetric model. It works with all the three datasets but also only in one direction (selfie to anime, male to female, removing glasses). Council-GAN provided configuration files and pretrained models for the three tasks. 
+
+We construct the configuration files for B to A translation using the same parameters as those for A to B except for parameters `do_a2b` and `do_b2a`. We have to set `do_a2b` to `False` and `do_b2a` to `True` so that we can use the same dataset as that for A to B translation without reversing the two domains as we did for ACL-GAN. 
+
+For some reason, Council-GAN also trained for removing glasses with shrinked images. More precisely, Council-GAN first resizes an image so that the width=128 and then take a 128x128 random crop as input. We used the pretrained model for removing glasses, but had to do postprocessing to enlarge the image. For adding glasses, we decided to load image with width resized to 256 and then take a 256x256 random crop as input (`new_size: 256`, `crop_image_height: 256`, `crop_image_width: 256`).
+
+### CycleGAN
+CycleGAN does not use configuration files. Please find the train and test command [here](https://github.com/LS4GAN/benchmarking/blob/main/CycleGAN/commands.md)
+
+### U-GAT-IT
 
 ## Test outputs
 Links to raw and processed [test output]:
