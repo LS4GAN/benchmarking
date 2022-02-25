@@ -18,7 +18,7 @@ to uniformize the comparison. Here are links to the forked repo:
 The detailed list of modifications to each repo can be found
 in the section of [List of modifications].
 
-## Train and test the benchmarking algorithms:
+## How benchmarking results are produced
 We used pretrained models whenever they are provided. 
 In case an algorithm did work on a dataset or it did but didn't provide a pretrained model, we generated it. 
 Here is the link to all [pre-trained models]
@@ -40,6 +40,15 @@ CycleGAN does not use configuration files. Please find the train and test comman
 ### U-GAT-IT
 U-GAT-IT hard coded a lot of parameters, and hence the train and test commands are extremely simple. U-GAT-IT provided pretrained model for the selfie2anime dataset but it was in TensorFlow. And the zip file is also corrupted. But, fastjar can extract it using the following command : 
 > `fastjar -v -v -v -x -f ~/Downloads/100_epoch_selfie2anime_checkpoint.zip` 
+We provide train and test commands for the gender and glasses dataset [here](https://github.com/LS4GAN/benchmarking/blob/main/U-GAT-IT/commands.md).
+
+Since U-GAT-IT hard-coded the preprocessing part didn't provide individual control to width and height. 
+In the train phase, U-GAT-IT first resizes the image to have a size 286 x 286 (and hence mess up the aspect ratio for non-squared images) and takes a random crop of 256 x256. In the testing phase, it resizes the image to 256 x 256. U-GAT-IT also output more than just the translated images. 
+In order to pick up only the translated image and restore its aspect ratio, we have to process the U-GAT-IT's test output using this [script](https://github.com/LS4GAN/benchmarking/blob/main/U-GAT-IT/process_ugatit.py). 
+The script does the following:
+- take the fifth image in the image stack (`image.crop(left=0, top=4 * 256, right=256, bottom=5 * 256`);
+- resize back to ratio (`image.resize(256, 314)`);
+- take the center crop (`image.crop(left=0, top=(314 - 256) / 2, right=256, bottom=(314 + 256) / 2)`).
 
 ## Test outputs
 Links to raw and processed [test output]:
