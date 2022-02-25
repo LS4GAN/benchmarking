@@ -33,9 +33,9 @@ In order to run test, we need to save the generators to separate folders.
 ## Test commands
 The `--name` parameter is the subfolder name under `checkpoints`
 - selfie to anime: 
-  > `python test.py --gpu_ids [gpu_ids] --results_dir results --model test --no_dropout --dataroot [path_to_selfie2anime]/testA --name selfie2anime
+  > `python test.py --gpu_ids [gpu_ids] --results_dir results --model test --no_dropout --dataroot [path_to_selfie2anime]/testA --name selfie2anime`
 - anime to selfie: 
-  > `python test.py --gpu_ids [gpu_ids] --results_dir results --model test --no_dropout --dataroot [path_to_selfie2anime]/testB --name anime2selfie
+  > `python test.py --gpu_ids [gpu_ids] --results_dir results --model test --no_dropout --dataroot [path_to_selfie2anime]/testB --name anime2selfie`
 
 - male to female: 
   > `python test.py --gpu_ids [gpu_ids] --results_dir results --model test --no_dropout --load_size 256 --preprocess scale_width_and_crop --dataroot [path_to_gender]/testA --name male2female`
