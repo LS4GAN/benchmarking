@@ -1,4 +1,5 @@
 # Benchmarking algorithms for the paper on UVCGAN
+[generator](https://github.com/LS4GAN/benchmarking/files/8172242/gen.1.pdf)
 In this repo, we discuss how benchmarking results are produced for the paper on UVCGAN ([GitHub repo](https://github.com/LS4GAN/uvcgan)).
 
 ## Summary
@@ -47,9 +48,7 @@ The script does the following:
 Links to raw and processed [test output]:
 
 ## List of modifications
-1. **ACL-GAN**[gen (1).pdf](https://github.com/LS4GAN/benchmarking/files/8172242/gen.1.pdf)
-[img.pdf](https://github.com/LS4GAN/benchmarking/files/8172243/img.pdf)
-: 
+1. **ACL-GAN**: 
     - Modified the `focus_translation` function in `test_batch.py`. There used to be mismatch in tensor size;
     - Removed the restriction of testing only 3000 images;
     - (around line 160) Modified size of the tensor named `images` so that it matches with the tensor named `outputs_til`.
@@ -93,6 +92,6 @@ and used `BILINEAR` as the `resample` method in the resize function.
 The code for processing the images can be found here
 
 ## Sample test output comparison
-
+[img.pdf](https://github.com/LS4GAN/benchmarking/files/8172243/img.pdf)
 ## Model size comparison
 ## Running time comparison 
