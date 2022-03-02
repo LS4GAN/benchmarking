@@ -2,25 +2,18 @@
 In this repo, we discuss how benchmarking results are produced for the paper on UVCGAN ([GitHub repo](https://github.com/LS4GAN/uvcgan)).
 
 ## Summary
-We studied four benchmarking algorithms
-1. ACL-GAN:     [paper](https://arxiv.org/pdf/2003.04858.pdf), [GitHub repo](https://github.com/hyperplane-lab/ACL-GAN)
-3. Council-GAN: [paper](https://openaccess.thecvf.com/content_CVPR_2020/papers/Nizan_Breaking_the_Cycle_-_Colleagues_Are_All_You_Need_CVPR_2020_paper.pdf), [GitHub repo](https://github.com/Onr/Council-GAN)
-4. CycleGAN:    [paper](https://arxiv.org/pdf/1703.10593.pdf), [GitHub repo](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
-5. U-GAT-IT:    [paper](https://arxiv.org/pdf/1907.10830.pdf), [GitHub repo](https://github.com/znxlwm/UGATIT-pytorch)
-
-We made several minor modifications to the benchmarking algorithms
-to uniformize the comparison. Here are links to the forked repo:
-1. ACL-GAN:     [Modified GitHub repo](https://github.com/pphuangyi/ACL-GAN)
-2. Council-GAN: [Modified GitHub repo]
-3. CycleGAN:    [Modified GitHub repo](https://github.com/pphuangyi/pytorch-CycleGAN-and-pix2pix)
-4. U-GAT-IT:    [Modified GitHub repo](https://github.com/pphuangyi/UGATIT-pytorch)
-
-The detailed list of modifications to each repo can be found
-in the section of [List of modifications].
+We studied four benchmarking algorithms ACL-GAN, Council-GAN, CycleGAN, and U-GAT-IT. We made several minor modifications to the benchmarking algorithms
+to make comparison easier. Here are links to the paper, the original repo, and the forked (modified) repo:
+1. ACL-GAN:     [paper](https://arxiv.org/pdf/2003.04858.pdf), [GitHub repo](https://github.com/hyperplane-lab/ACL-GAN), [Modified GitHub repo](https://github.com/pphuangyi/ACL-GAN)
+3. Council-GAN: [paper](https://openaccess.thecvf.com/content_CVPR_2020/papers/Nizan_Breaking_the_Cycle_-_Colleagues_Are_All_You_Need_CVPR_2020_paper.pdf), [GitHub repo](https://github.com/Onr/Council-GAN), [Modified GitHub repo]
+4. CycleGAN:    [paper](https://arxiv.org/pdf/1703.10593.pdf), [GitHub repo](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix), [Modified GitHub repo](https://github.com/pphuangyi/pytorch-CycleGAN-and-pix2pix)
+5. U-GAT-IT:    [paper](https://arxiv.org/pdf/1907.10830.pdf), [GitHub repo](https://github.com/znxlwm/UGATIT-pytorch), [Modified GitHub repo](https://github.com/pphuangyi/UGATIT-pytorch)
+    
+The detailed list of modifications to each repo can be found in the section of [List of modifications](#list-of-modifications).
 
 ## How benchmarking results are produced
 We used pretrained models whenever they are provided. 
-In case an algorithm did work on a dataset or it did but didn't provide a pretrained model, we generated it. 
+In case an algorithm didn't work on a dataset or it did but didn't provide a pretrained model, we generated it. 
 Here is the link to all [pre-trained models]
 ### ACL-GAN
 ACL-GAN worked on all three datasets, but it only studied translation in one direction (selfie to anime, male to female, removing glasses). It also only provided the configuration file for the male to female task and didn't provide any pretrained model. We generated the configuration files for the other two tasks (selfie to anime, removing glasses) using parameters provided in the paper. Since ACL-GAN is an asymmetric model, we have to train each direction individually. For translation in the opposite directions, we use exactly the same parameter except for `data_root` (dataset location) and `data_kind` (the name of the task). All configuration files can be found [here](https://github.com/LS4GAN/benchmarking/tree/main/ACL-GAN/configs).
@@ -54,25 +47,33 @@ The script does the following:
 Links to raw and processed [test output]:
 
 ## List of modifications
-1. ACL-GAN:
-2. Council-GAN:
-3. CycleGAN:
-4. U-GAT-IT:
+1. **ACL-GAN**[gen (1).pdf](https://github.com/LS4GAN/benchmarking/files/8172242/gen.1.pdf)
+[img.pdf](https://github.com/LS4GAN/benchmarking/files/8172243/img.pdf)
+: 
+    - Modified the `focus_translation` function in `test_batch.py`. There used to be mismatch in tensor size;
+    - Removed the restriction of testing only 3000 images;
+    - (around line 160) Modified size of the tensor named `images` so that it matches with the tensor named `outputs_til`.
+3. **Council-GAN**: Modified the test output to have the same file name as the input.
+4. **CycleGAN**:
+    - CycleGAN output random crops in the test phase. Since most other algorithms use center crop, I modified the code to output center crops in the test phase.
+    - The training of CycleGAN is scheduled for running 200 epochs. By default, CycleGAN runs through the whole dataset in each epoch. This works well for relatively smaller dataset, but can take too long for the two CelebA datasets. Also, since all the other algorithms train on around 1M images and CycleGAN doesn't have the control to do so, I added the a parameter so that a fixed number of random samples could be loaded for each epoch. So if we load 5000 images per epoch and let CycleGAN run for 200 epoches, it also sees 1M images during training.
+    - Modified the test output to have the same file name as the input.
+5. **U-GAT-IT**: Modified the test output to have the same file name as the input.
 
 ## Datasets
 We compare the algorithms on three datasets:
-1. Sefie2Anime: [anime dataset link]
+1. **Sefie2Anime**: [anime dataset link]
     - 256x256 images, domain A = selfie, domain B = anime,
     - `trainA`: 3400, `trainB`: 3400, `testA`: 100, `testB`: 100
     - more information of the dataset can be find:
 
-2. CelebA-gender: [gender dataset link]
+2. **CelebA-gender**: [gender dataset link]
     - 178x218 images, domain A = male, domain B = female,
     - `tarinA`: 68261, `trainB`: 94509, `testA`: 16173, `testB`: 23656
     - The dataset is derived from the [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset
         by splitting according to the attribute `male`;
 
-3. CelebA-glasses: [glasses dataset link]
+3. **CelebA-glasses**: [glasses dataset link]
     - 178x218 images, domain A = with glasses, domain B = without glasses,
     - `tarinA`: 10421, `trainB`: 152249, `testA`: 2672, `testB`: 37157
     - The dataset is derived from the [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset
