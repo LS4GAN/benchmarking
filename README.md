@@ -1,5 +1,6 @@
 # Benchmarking algorithms for the paper on UVCGAN
-[generator](https://github.com/LS4GAN/benchmarking/files/8172242/gen.1.pdf)
+<img src="https://user-images.githubusercontent.com/22546248/156432368-41097ddc-357e-4776-8909-77bfd08157d6.jpg" width="800" alt="generator"/>
+
 In this repo, we discuss how benchmarking results are produced for the paper on UVCGAN ([GitHub repo](https://github.com/LS4GAN/uvcgan)).
 
 ## Summary
@@ -89,9 +90,11 @@ we also resized the images in the test partition of gender and
 glasses datasets and took the central crops.
 We used the python [`PIL`](https://pillow.readthedocs.io/en/latest/index.html) package for processing images
 and used `BILINEAR` as the `resample` method in the resize function.
-The code for processing the images can be found here
+<img src="https://user-images.githubusercontent.com/22546248/156433246-65ff3d24-6df9-4e17-bb9f-23736bbfc291.png" width="800" alt="fid-kid">
+
 
 ## Sample test output comparison
-[img.pdf](https://github.com/LS4GAN/benchmarking/files/8172243/img.pdf)
+<img src="https://user-images.githubusercontent.com/22546248/156432283-39390ec5-28a0-41d9-8674-b7d15a46e692.jpg" width="800" alt="sample images"/>
+
 ## Model size comparison
 ## Running time comparison 
