@@ -99,3 +99,17 @@ Find more details of how benchmarking results are generated and what modificatio
 
 ## Model size comparison
 ## Running time comparison 
+
+## More samples, both good and bad
+1. Selfie to Anime
+<img src="https://user-images.githubusercontent.com/22546248/156852263-138caffd-4be5-4cfe-9751-04f336d4e336.png" alt="Selfie to Anime" width="800">
+2. Anime to Selfie 
+<img src="https://user-images.githubusercontent.com/22546248/156852411-45211cb6-3968-4b1d-b0c9-ee49b2fea13b.png" alt="Anime to Selfie" width="800">
+3. Male to Female 
+<img src="https://user-images.githubusercontent.com/22546248/156852477-bb07b336-b0db-49b1-98dd-22e8abd28d12.png" alt="Male to Female" width="800">
+4. Female to Male 
+<img src="https://user-images.githubusercontent.com/22546248/156852545-ccaa05fe-c3fa-4421-b579-7178c4697e03.png" alt="Female to Male" width="800">
+5. Remove Glasses 
+<img src="https://user-images.githubusercontent.com/22546248/156852590-f7a5f7ea-871e-4610-817b-d395b17cff5f.png" alt="Remove Glasses" width="800">
+6. Add Glasses 
+<img src="https://user-images.githubusercontent.com/22546248/156852642-addfdbf7-dc57-4813-a0ee-0906849add40.png" alt="Add Glasses" width="800">
