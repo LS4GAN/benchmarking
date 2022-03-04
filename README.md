@@ -90,6 +90,9 @@ and used `BILINEAR` as the `resample` method in the resize function.
 We calculate the scores using the [`torch-fidelity`](https://github.com/toshas/torch-fidelity/releases/tag/v0.3.0) package
 <img src="https://user-images.githubusercontent.com/22546248/156433246-65ff3d24-6df9-4e17-bb9f-23736bbfc291.png" width="800" alt="fid-kid">
 
+Find more details of how benchmarking results are generated and what modifications we did to the benchmarking algorithms here:
+[ACL-GAN](#acl-gan), [Council-GAN](#council-gan), [CycleGAN](#cyclegan), [U-GAT-IT](#u-gat-it), [modifications](#list-of-modifications)
+
 
 ## Sample test output comparison
 <img src="https://user-images.githubusercontent.com/22546248/156432283-39390ec5-28a0-41d9-8674-b7d15a46e692.jpg" width="800" alt="sample images"/>
