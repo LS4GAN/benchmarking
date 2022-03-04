@@ -87,7 +87,7 @@ we also resized the images in the test partition of gender and
 glasses datasets and took the central crops.
 We used the python [`PIL`](https://pillow.readthedocs.io/en/latest/index.html) package for processing images
 and used `BILINEAR` as the `resample` method in the resize function.
-We calculate the scores using the [`torch-fidelity`](https://github.com/toshas/torch-fidelity/commit/5f7c5b5ccc4128bd79be2fdd8e75f118aa8fdc7c) package
+We calculate the scores using the [`torch-fidelity`](https://github.com/toshas/torch-fidelity/releases/tag/v0.3.0) package
 <img src="https://user-images.githubusercontent.com/22546248/156433246-65ff3d24-6df9-4e17-bb9f-23736bbfc291.png" width="800" alt="fid-kid">
 
 
