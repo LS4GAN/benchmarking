@@ -59,18 +59,18 @@ The script does the following:
 
 ## Datasets
 We compare the algorithms on three datasets:
-1. **Sefie2Anime**: [anime dataset link](https://paperswithcode.com/dataset/selfie2anime)
+1. **Sefie2Anime**: 
     - 256x256 images, domain A = selfie, domain B = anime,
     - `trainA`: 3400, `trainB`: 3400, `testA`: 100, `testB`: 100
-    - more information of the dataset can be found from the U-GAT-IT paper. 
+    - more information of the dataset can be found [here](https://paperswithcode.com/dataset/selfie2anime) or from the U-GAT-IT paper. 
 
-2. **CelebA-gender**: [gender dataset link](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+2. **CelebA-gender**:
     - 178x218 images, domain A = male, domain B = female,
     - `tarinA`: 68261, `trainB`: 94509, `testA`: 16173, `testB`: 23656
     - The dataset is derived from the [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset
         by splitting according to the attribute `male`;
 
-3. **CelebA-glasses**: [glasses dataset link](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+3. **CelebA-glasses**: 
     - 178x218 images, domain A = with glasses, domain B = without glasses,
     - `tarinA`: 10421, `trainB`: 152249, `testA`: 2672, `testB`: 37157
     - The dataset is derived from the [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset
