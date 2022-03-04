@@ -45,9 +45,6 @@ The script does the following:
 - resize back to ratio (`image.resize(256, 314)`);
 - take the center crop (`image.crop(left=0, top=(314 - 256) / 2, right=256, bottom=(314 + 256) / 2)`).
 
-## Test outputs
-Links to raw and processed [test output]:
-
 ## List of modifications
 1. **ACL-GAN**: 
     - Modified the `focus_translation` function in `test_batch.py`. There used to be mismatch in tensor size;
