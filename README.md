@@ -126,8 +126,8 @@ and used `BILINEAR` as the `resample` method in the resize function.
 We calculate the scores using the [`torch-fidelity`](https://github.com/toshas/torch-fidelity/releases/tag/v0.3.0) package
 <img src="https://user-images.githubusercontent.com/22546248/156433246-65ff3d24-6df9-4e17-bb9f-23736bbfc291.png" width="800" alt="fid-kid">
 
-Find more details of how benchmarking results are generated and what modifications we did to the benchmarking algorithms here:
-[ACL-GAN](#acl-gan), [Council-GAN](#council-gan), [CycleGAN](#cyclegan), [U-GAT-IT](#u-gat-it), [modifications](#list-of-modifications)
+Find more details of how benchmarking results are generated here: [ACL-GAN](#acl-gan), [Council-GAN](#council-gan), [CycleGAN](#cyclegan), [U-GAT-IT](#u-gat-it).
+Find what modifications we did to the benchmarking algorithms [here](#list-of-modifications).
 
 
 ## Sample test output comparison
@@ -135,6 +135,26 @@ Find more details of how benchmarking results are generated and what modificatio
 
 ## Model size comparison
 ## Running time comparison 
+<table>
+    <tr>
+        <td>Algorithm</td><td>Selfie to Anime</td><td>Anime to Selfie</td><td>Male to Female</td><td>Female to Male</td><td>Remove Glasses</td><td>Add Glasses</td>
+    </tr>
+    <tr>
+        <td><b>ACL-GAN</b></td><td>Three</td>
+    </tr>
+    <tr>
+        <td><b>Council-GAN</b></td><td>Three</td>
+    </tr>
+    <tr>
+        <td><b>CycleGAN</b></td><td colspan="2">Three</td><td colspan="2">Three</td><td colspan="2">Three</td>
+    </tr>
+    <tr>
+        <td><b>U-GAT-IT</b></td><td colspan="2">Three</td><td colspan="2">Three</td><td colspan="2">Three</td>
+    </tr>
+    <tr>
+        <td><b>UVCGAN</b></td><td colspan="2">Three</td><td colspan="2">Three</td><td colspan="2">Three</td>
+    </tr>
+</table>
 
 ## More sample images, both good and bad
 1. Selfie to Anime
