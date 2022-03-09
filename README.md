@@ -143,7 +143,7 @@ Find what modifications we did to the benchmarking algorithms [here](#list-of-mo
         <td><b>ACL-GAN</b></td><td>~45</td><td>~45</td><td>~45</td><td>~45</td><td>~42</td><td>~42</td>
     </tr>
     <tr>
-        <td><b>Council-GAN</b></td><td>-</td><td>~450</td><td>-</td><td>~450</td><td>-</td><td>~450</td>
+        <td><b>Council-GAN</b></td><td>-</td><td>~300</td><td>-</td><td>~300</td><td>-</td><td>~300</td>
     </tr>
     <tr>
         <td><b>CycleGAN</b></td><td colspan="2">~36</td><td colspan="2">~36</td><td colspan="2">~40</td>
