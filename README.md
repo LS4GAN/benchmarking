@@ -134,25 +134,25 @@ Find what modifications we did to the benchmarking algorithms [here](#list-of-mo
 <img src="https://user-images.githubusercontent.com/22546248/156432283-39390ec5-28a0-41d9-8674-b7d15a46e692.jpg" width="800" alt="sample images"/>
 
 ## Model size comparison
-## Running time comparison 
+## Running time (in hours) comparison 
 <table>
     <tr>
-        <td>Algorithm</td><td>Selfie to Anime</td><td>Anime to Selfie</td><td>Male to Female</td><td>Female to Male</td><td>Remove Glasses</td><td>Add Glasses</td>
+        <th></th><th>Selfie to Anime</th><th>Anime to Selfie</th><th>Male to Female</th><th>Female to Male</th><th>Remove Glasses</th><th>Add Glasses</th>
     </tr>
     <tr>
-        <td><b>ACL-GAN</b></td><td>Three</td>
+        <td><b>ACL-GAN</b></td><td>~45</td><td>~45</td><td>~45</td><td>~45</td><td>~42</td><td>~42</td>
     </tr>
     <tr>
-        <td><b>Council-GAN</b></td><td>Three</td>
+        <td><b>Council-GAN</b></td><td>-</td><td>~450</td><td>-</td><td>~450</td><td>-</td><td>~450</td>
     </tr>
     <tr>
-        <td><b>CycleGAN</b></td><td colspan="2">Three</td><td colspan="2">Three</td><td colspan="2">Three</td>
+        <td><b>CycleGAN</b></td><td colspan="2">~36</td><td colspan="2">~36</td><td colspan="2">~40</td>
     </tr>
     <tr>
-        <td><b>U-GAT-IT</b></td><td colspan="2">Three</td><td colspan="2">Three</td><td colspan="2">Three</td>
+        <td><b>U-GAT-IT</b></td><td colspan="2">-</td><td colspan="2">~140</td><td colspan="2">~141</td>
     </tr>
     <tr>
-        <td><b>UVCGAN</b></td><td colspan="2">Three</td><td colspan="2">Three</td><td colspan="2">Three</td>
+        <td><b>UVCGAN</b></td><td colspan="2">(@Dmitrii)</td><td colspan="2">(@Dmitrii)</td><td colspan="2">(@Dmitrii)</td>
     </tr>
 </table>
 
