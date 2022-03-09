@@ -4,7 +4,7 @@
 
 In this repo, we discuss how benchmarking results are produced for the paper on UVCGAN. 
 - [UVCGAN: UNet Vision Transformer cycle-consistent GAN for unpaired image-to-image translation](https://arxiv.org/abs/2203.02557) 
-- [GitHub repo](https://github.com/LS4GAN/uvcgan)
+- [UVCGAN GitHub repo](https://github.com/LS4GAN/uvcgan)
 
 ## Summary
 We studied four benchmarking algorithms ACL-GAN, Council-GAN, CycleGAN, and U-GAT-IT. We made several minor modifications to the benchmarking algorithms
