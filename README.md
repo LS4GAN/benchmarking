@@ -43,7 +43,7 @@ The number in the parenthesis indicate the case.
     - add glasses(2, use remove glasses parameters)
 3. **CycleGAN**: CycleGAN wasn't tested on any of the datasets so we trained **all** of them from scratch.
     > linux download: `wget https://zenodo.org/record/6329717/files/CycleGAN_pretrained_models.zip`
-5. **U-GAT-IT**: `TensorFlow` models for selfie-to-anime and anime-to-selfie are provided (see #u-gat-it for mor detail)
+5. **U-GAT-IT**: `TensorFlow` models for selfie-to-anime and anime-to-selfie are provided (see [U-GAT-IT](#u-gat-it) for mor detail)
     - male-to-female and female-to-male (2, use the default parameters)
       > linux download: `wget https://zenodo.org/record/6329717/files/U-GAT-IT_gender_params_1000000.zip` (for gender only)
     - remove and add glasses (2, use the default parameters)
@@ -81,7 +81,7 @@ The script does the following:
 - take the center crop (`image.crop(left=0, top=(314 - 256) / 2, right=256, bottom=(314 + 256) / 2)`).
 
 ## List of modifications 
-> Modifications can be found in the modified GitHub repos in [Summary](#summary) section.
+> Modifications can be found in the modified GitHub repos in the [Summary](#summary) section.
 1. **ACL-GAN**: 
     - Modified the `focus_translation` function in `test_batch.py`. There used to be a mismatch in tensor size;
     - Removed the restriction of testing only 3000 images;
