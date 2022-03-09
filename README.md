@@ -25,11 +25,12 @@ We train a model from scratch in the following two cases:
 In the first case, we used the default parameters whenever possible and made only necessary changes such dataset location and image resizing and cropping.
 In the second case, we used the parameters provided by the paper. 
 
-Here is the link to all [pre-trained models](https://zenodo.org/record/6329717#.YijFfHrMK3A) we trained from scratch.
+Here is the link to all [pre-trained models](https://zenodo.org/record/6329717#.YijFfHrMK3A) we trained from scratch. 
+We only included the _generators_ which can be used to generator translationed images, but not the _discriminators_. 
 The pretrained models that can be downloaded from the link are listed below.
 The number in the parenthesis indicate the case. 
 1. **ACL-GAN**: 
-    > linux download: `wget wget https://zenodo.org/record/6329717/files/ACL-GAN_pretrained_models.zip` (for all)
+    > linux download: `wget wget https://zenodo.org/record/6329717/files/ACL-GAN_pretrained_models.zip` (total size: 596.5 MB)
     - selfie-to-anime(1)
     - anime-to-selfie(2, use selfie-to-anime parameters) 
     - male-to-female(1)
@@ -37,17 +38,17 @@ The number in the parenthesis indicate the case.
     - remove glasses(1)
     - add glasses(2, use remove glasses parameters)
 2. **Council-GAN**: (pretrained models for selfie-to-anime, male-to-female, and remove glasses are provided)
-    > linux download: `wegt https://zenodo.org/record/6329717/files/Council-GAN_pretrained_models.zip` (for all)
+    > linux download: `wegt https://zenodo.org/record/6329717/files/Council-GAN_pretrained_models.zip` (total size: 776.3 MB)
     - anime-to-selfie(2, use selfie-to-anime parameters) 
     - female-to-male(2, use male-to-female parameters)
     - add glasses(2, use remove glasses parameters)
 3. **CycleGAN**: CycleGAN wasn't tested on any of the datasets so we trained **all** of them from scratch.
-    > linux download: `wget https://zenodo.org/record/6329717/files/CycleGAN_pretrained_models.zip`
+    > linux download: `wget https://zenodo.org/record/6329717/files/CycleGAN_pretrained_models.zip` (total size: 253.8 MB)
 5. **U-GAT-IT**: `TensorFlow` models for selfie-to-anime and anime-to-selfie are provided (see [U-GAT-IT](#u-gat-it) for mor detail)
     - male-to-female and female-to-male (2, use the default parameters)
-      > linux download: `wget https://zenodo.org/record/6329717/files/U-GAT-IT_gender_params_1000000.zip` (for gender only)
+      > linux download: `wget https://zenodo.org/record/6329717/files/U-GAT-IT_gender_params_1000000.zip` (for gender only, size: 1.7G)
     - remove and add glasses (2, use the default parameters)
-      > linux download: `wget https://zenodo.org/record/6329717/files/U-GAT-IT_glasses_params_1000000.zip` (for glasses only)
+      > linux download: `wget https://zenodo.org/record/6329717/files/U-GAT-IT_glasses_params_1000000.zip` (for glasses only, size: 1.7G)
 
 
 ### ACL-GAN
@@ -133,7 +134,6 @@ Find what modifications we did to the benchmarking algorithms [here](#list-of-mo
 ## Sample test output comparison
 <img src="https://user-images.githubusercontent.com/22546248/156432283-39390ec5-28a0-41d9-8674-b7d15a46e692.jpg" width="800" alt="sample images"/>
 
-## Model size comparison
 ## Running time (in hours) comparison 
 <table>
     <tr>
