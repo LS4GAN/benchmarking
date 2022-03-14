@@ -134,7 +134,7 @@ Find what modifications we did to the benchmarking algorithms [here](#list-of-mo
 ## Sample test output comparison
 <img src="https://user-images.githubusercontent.com/22546248/156432283-39390ec5-28a0-41d9-8674-b7d15a46e692.jpg" width="800" alt="sample images"/>
 
-## Running time (in hours) comparison 
+## Training time (in hours) comparison
 <table>
     <tr>
         <th></th><th>Selfie to Anime</th><th>Anime to Selfie</th><th>Male to Female</th><th>Female to Male</th><th>Remove Glasses</th><th>Add Glasses</th>
@@ -152,9 +152,11 @@ Find what modifications we did to the benchmarking algorithms [here](#list-of-mo
         <td><b>U-GAT-IT</b></td><td colspan="2">-</td><td colspan="2">~140</td><td colspan="2">~141</td>
     </tr>
     <tr>
-        <td><b>UVCGAN</b></td><td colspan="2">(@Dmitrii)</td><td colspan="2">(@Dmitrii)</td><td colspan="2">(@Dmitrii)</td>
+        <td><b>UVCGAN</b></td><td colspan="2">~59</td><td colspan="2">~61</td><td colspan="2">~60</td>
     </tr>
 </table>
+
+The training time is measured on a single NVIDIA RTX A6000 GPU.
 
 ## More sample images, both good and bad
 1. Selfie to Anime
