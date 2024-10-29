@@ -38,7 +38,7 @@ The number in the parenthesis indicate the case.
     - remove glasses(1)
     - add glasses(2, use remove glasses parameters)
 2. **Council-GAN**: (pretrained models for selfie-to-anime, male-to-female, and remove glasses are provided)
-    > linux download: `wegt https://zenodo.org/record/6329717/files/Council-GAN_pretrained_models.zip` (total size: 776.3 MB)
+    > linux download: `wget https://zenodo.org/record/6329717/files/Council-GAN_pretrained_models.zip` (total size: 776.3 MB)
     - anime-to-selfie(2, use selfie-to-anime parameters) 
     - female-to-male(2, use male-to-female parameters)
     - add glasses(2, use remove glasses parameters)
